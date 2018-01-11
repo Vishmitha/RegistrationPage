@@ -8,6 +8,7 @@
     android:background="@drawable/dp"
 
 
+
     tools:context="com.example.admin.registrationpage.MainActivity">
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
