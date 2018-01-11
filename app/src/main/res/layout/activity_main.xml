@@ -32,6 +32,7 @@
             android:textColor="#7b1177"
             android:textStyle="bold"/>
         <EditText
+            android:id="@+id/et1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp" />
@@ -52,6 +53,7 @@
             android:textStyle="bold"/>
 
         <EditText
+            android:id="@+id/et2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"/>
@@ -69,6 +71,7 @@
             android:textColor="#7b1177"
             android:textStyle="bold"/>
         <EditText
+            android:id="@+id/et3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"/>
@@ -86,6 +89,7 @@
             android:textColor="#7b1177"
             android:textStyle="bold"/>
         <EditText
+            android:id="@+id/et4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"/>
@@ -103,6 +107,7 @@
             android:textColor="#7b1177"
             android:textStyle="bold"/>
         <EditText
+            android:id="@+id/et5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"/>
@@ -120,6 +125,7 @@
             android:textColor="#7b1177"
             android:textStyle="bold"/>
         <EditText
+            android:id="@+id/et6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"/>
@@ -137,6 +143,7 @@
             android:textColor="#7b1177"
             android:textStyle="bold"/>
         <EditText
+            android:id="@+id/et7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"/>
@@ -154,6 +161,7 @@
             android:textColor="#7b1177"
             android:textStyle="bold"/>
         <EditText
+            android:id="@+id/et8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"/>
@@ -170,6 +178,7 @@
         android:textColor="#7b1177"
         android:textStyle="bold" />
     <EditText
+        android:id="@+id/et19"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"/>
@@ -186,6 +195,7 @@
         android:textColor="#7b1177"
         android:textStyle="bold"/>
     <EditText
+        android:id="@+id/et10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"/>
@@ -195,6 +205,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
+            android:id="@+id/btn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="90dp"
@@ -202,6 +213,7 @@
             android:background="#9ce5f4"
             android:textColor="#1d3c8b"/>
         <Button
+            android:id="@+id/btn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
