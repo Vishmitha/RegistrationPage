@@ -219,6 +219,7 @@
             android:textColor="#1d3c8b"/>
 
         <Button
+
             android:id="@+id/btn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
