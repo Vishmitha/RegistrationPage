@@ -217,14 +217,7 @@
             android:text="submit"
             android:background="#9ce5f4"
             android:textColor="#1d3c8b"/>
-        <Button
-            android:id="@+id/btn2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="reset"
-            android:background="#9ce5f4"
-            android:textColor="#1d3c8b"/>
+
 
 
     </LinearLayout>
