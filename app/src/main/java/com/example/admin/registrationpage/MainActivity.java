@@ -30,6 +30,14 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String e= e1.getText().toString();
+
+
+
+
+                  {
+
+                }
 
 
 
