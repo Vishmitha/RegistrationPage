@@ -179,7 +179,7 @@
         android:textColor="#7b1177"
         android:textStyle="bold" />
     <EditText
-        android:id="@+id/et19"
+        android:id="@+id/et9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"/>
