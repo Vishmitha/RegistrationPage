@@ -105,9 +105,11 @@
             android:layout_height="wrap_content"
             android:text="Password                :"
             android:textSize="20dp"
+
             android:textColor="#7b1177"
             android:textStyle="bold"/>
         <EditText
+            android:inputType="numberPassword"
             android:id="@+id/et5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -127,6 +129,7 @@
             android:textStyle="bold"/>
         <EditText
             android:id="@+id/et6"
+            android:inputType="numberPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"/>
@@ -176,13 +179,19 @@
         android:layout_height="wrap_content"
         android:text="Date of Birth           :"
         android:textSize="20dp"
+
+
         android:textColor="#7b1177"
         android:textStyle="bold" />
-    <EditText
-        android:id="@+id/et9"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"/>
+        android:text=""
+
+        android:onClick="setDate"
+        android:drawableRight="@drawable/ic_action_cal"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </LinearLayout> <LinearLayout
     android:layout_width="match_parent"
