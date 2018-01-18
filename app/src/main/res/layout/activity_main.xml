@@ -21,10 +21,20 @@
             android:gravity="center"
             android:textColor="#521978"/>
     </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
         <TextView
             android:layout_width="178dp"
             android:layout_height="wrap_content"
@@ -42,7 +52,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
 
 
         <TextView
@@ -64,7 +75,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
         <TextView
             android:layout_width="178dp"
             android:layout_height="wrap_content"
@@ -82,7 +94,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
         <TextView
             android:layout_width="178dp"
             android:layout_height="wrap_content"
@@ -100,7 +113,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
         <TextView
             android:layout_width="178dp"
             android:layout_height="wrap_content"
@@ -120,7 +134,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -139,7 +154,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
         <TextView
             android:layout_width="178dp"
             android:layout_height="wrap_content"
@@ -157,7 +173,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
         <TextView
             android:layout_width="178dp"
             android:layout_height="wrap_content"
@@ -174,7 +191,8 @@
     </LinearLayout> <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+            android:layout_marginTop="10dp">
     <TextView
         android:layout_width="178dp"
         android:layout_height="wrap_content"
@@ -198,7 +216,8 @@
 </LinearLayout> <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+            android:layout_marginTop="10dp">
     <TextView
         android:layout_width="181dp"
         android:layout_height="wrap_content"
@@ -219,7 +238,8 @@
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
         <Button
             android:id="@+id/btn1"
             android:layout_width="wrap_content"
@@ -242,5 +262,7 @@
 
 
     </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
