@@ -48,7 +48,7 @@ Validation validation;
 
                 if(!validation.isValidName(Firstname.getText().toString()))
                 {
-                    Firstname.setError("please enter a name");
+                    Firstname.setError("please enter a name it contain less than 11 charater");
                 } else {
                     Firstname.setError(null);
                 }
