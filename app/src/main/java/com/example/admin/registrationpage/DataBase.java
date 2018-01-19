@@ -10,6 +10,7 @@ import java.util.Date;
  * Created by admin on 19-Jan-18.
  */
 
+
 public class DataBase extends SQLiteOpenHelper{
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "UserManager.db";
