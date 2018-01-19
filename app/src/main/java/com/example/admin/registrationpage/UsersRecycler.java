@@ -33,11 +33,15 @@ public class UsersRecycler extends RecyclerView.Adapter<UsersRecycler.UserViewHo
 
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
-        holder.textViewName.setText(listUsers.get(position).getFname());
-        holder.textViewName.setText(listUsers.get(position).getFname());
-        holder.textViewName.setText(listUsers.get(position).getFname());
+        holder.textViewFName.setText(listUsers.get(position).getFname());
+        holder.textViewMName.setText(listUsers.get(position).getMname());
+        holder.textViewLName.setText(listUsers.get(position).getLname());
         holder.textViewEmail.setText(listUsers.get(position).getEmail());
         holder.textViewPassword.setText(listUsers.get(position).getPassword());
+        holder.textViewPhono.setText(listUsers.get(position).getPhno());
+        holder.textViewFaxno.setText(listUsers.get(position).getFaxno());
+        holder.textViewDoB.setText(listUsers.get(position).getDOB());
+        holder.textViewAddress.setText(listUsers.get(position).getAddress());
     }
 
     @Override
@@ -47,26 +51,34 @@ public class UsersRecycler extends RecyclerView.Adapter<UsersRecycler.UserViewHo
     }
 
 
+
+
     /**
      * ViewHolder class
      */
     public class UserViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView textViewName;
+        public TextView textViewFName;
+        public TextView textViewMName;
+        public TextView textViewLName;
         public TextView textViewEmail;
         public TextView textViewPassword;
+        public TextView textViewPhono;
+        public TextView textViewFaxno;
+        public TextView textViewDoB;
+        public TextView textViewAddress;
 
         public UserViewHolder(View view) {
             super(view);
-            textViewName = (TextView) view.findViewById(R.id.Fname);
-            textViewEmail = (TextView) view.findViewById(R.id.Mname);
-            textViewPassword = (TextView) view.findViewById(R.id.Lname);
-            textViewName = (TextView) view.findViewById(R.id.Email);
-            textViewEmail = (TextView) view.findViewById(R.id.Password);
-            textViewPassword = (TextView) view.findViewById(R.id.Phono);
-            textViewName = (TextView) view.findViewById(R.id.Faxno);
-            textViewEmail = (TextView) view.findViewById(R.id.DoB);
-            textViewPassword = (TextView) view.findViewById(R.id.Address);
+            textViewFName = (TextView) view.findViewById(R.id.Fname);
+            textViewMName = (TextView) view.findViewById(R.id.Mname);
+            textViewLName= (TextView) view.findViewById(R.id.Lname);
+            textViewEmail = (TextView) view.findViewById(R.id.Email);
+            textViewPassword = (TextView) view.findViewById(R.id.Password);
+            textViewPhono = (TextView) view.findViewById(R.id.Phono);
+            textViewFaxno = (TextView) view.findViewById(R.id.Faxno);
+            textViewDoB = (TextView) view.findViewById(R.id.DoB);
+            textViewAddress = (TextView) view.findViewById(R.id.Address);
         }
     }
 
