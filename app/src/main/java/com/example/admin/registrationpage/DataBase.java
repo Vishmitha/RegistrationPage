@@ -71,7 +71,7 @@ public class DataBase extends SQLiteOpenHelper{
         values.put(COLUMN_USER_ADDRESS,user.getAddress());
 
 
-        // Inserting Row
+
         db.insert(TABLE_USER, null, values);
         db.close();
     }
