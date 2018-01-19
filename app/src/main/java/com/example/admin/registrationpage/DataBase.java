@@ -56,6 +56,7 @@ public class DataBase extends SQLiteOpenHelper{
     public void addUser(User user) {
 
 
+
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
