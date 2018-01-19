@@ -15,7 +15,7 @@ public class User {
     private String password;
     private int phno;
     private int faxno;
-    private Date DOB;
+    private String DOB;
     private String Address;
 
     public int getId() {
@@ -82,11 +82,11 @@ public class User {
         this.faxno = faxno;
     }
 
-    public Date getDOB() {
+    public String getDOB() {
         return DOB;
     }
 
-    public void setDOB(Date DOB) {
+    public void setDOB(String DOB) {
         this.DOB = DOB;
     }
 
