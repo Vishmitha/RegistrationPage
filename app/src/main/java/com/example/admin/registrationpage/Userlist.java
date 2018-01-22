@@ -1,29 +1,21 @@
 package com.example.admin.registrationpage;
 
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
-
-import com.ranjeet.srstask1.DatabaseHelper;
-import com.ranjeet.srstask1.UsersRecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by User on 1/18/2018.
- */
+class UsersListActivity extends AppCompatActivity {
 
-public class UsersList extends AppCompatActivity {
-
-    private AppCompatActivity activity = UsersList.this;
-    private TextView textViewName;
+    private AppCompatActivity activity = UsersListActivity.this;
+    private AppCompatTextView textViewName;
     private RecyclerView recyclerViewUsers;
     private List<User> listUsers;
     private UsersRecycler usersRecyclerAdapter;
@@ -32,7 +24,7 @@ public class UsersList extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.userlist);
+        setContentView(R.layout.activity_users_list);
 //        getSupportActionBar().setTitle("");
         initViews();
         initObjects();
@@ -43,7 +35,7 @@ public class UsersList extends AppCompatActivity {
      * This method is to initialize views
      */
     private void initViews() {
-        textViewName = (TextView) findViewById(R.id.t1);
+        textViewName = (AppCompatTextView) findViewById(R.id.textViewName);
         recyclerViewUsers = (RecyclerView) findViewById(R.id.recyclerViewUsers);
     }
 

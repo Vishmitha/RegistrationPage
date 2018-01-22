@@ -1,6 +1,5 @@
 package com.example.admin.registrationpage;
 
-import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
