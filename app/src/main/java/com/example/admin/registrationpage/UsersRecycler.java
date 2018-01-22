@@ -70,15 +70,15 @@ public class UsersRecycler extends RecyclerView.Adapter<UsersRecycler.UserViewHo
 
         public UserViewHolder(View view) {
             super(view);
-            textViewFName = (AppCompatTextView) view.findViewById(R.id.Fname);
-            textViewMName = (AppCompatTextView) view.findViewById(R.id.Mname);
-            textViewLName= (AppCompatTextView) view.findViewById(R.id.Lname);
-            textViewEmail = (AppCompatTextView) view.findViewById(R.id.Email);
-            textViewPassword = (AppCompatTextView) view.findViewById(R.id.Password);
-            textViewPhono = (AppCompatTextView) view.findViewById(R.id.Phono);
-            textViewFaxno = (AppCompatTextView) view.findViewById(R.id.Faxno);
-            textViewDoB = (AppCompatTextView) view.findViewById(R.id.DoB);
-            textViewAddress = (AppCompatTextView) view.findViewById(R.id.Address);
+            textViewFName = (AppCompatTextView) view.findViewById(R.id.textViewFName);
+            textViewMName = (AppCompatTextView) view.findViewById(R.id.textViewMName);
+            textViewLName= (AppCompatTextView) view.findViewById(R.id.textViewLName);
+            textViewEmail = (AppCompatTextView) view.findViewById(R.id.textViewEmail);
+            textViewPassword = (AppCompatTextView) view.findViewById(R.id.textViewPassword);
+            textViewPhono = (AppCompatTextView) view.findViewById(R.id.textViewPhono);
+            textViewFaxno = (AppCompatTextView) view.findViewById(R.id.textViewFaxno);
+            textViewDoB = (AppCompatTextView) view.findViewById(R.id.textViewDOB);
+            textViewAddress = (AppCompatTextView) view.findViewById(R.id.textViewAddress);
         }
     }
 
