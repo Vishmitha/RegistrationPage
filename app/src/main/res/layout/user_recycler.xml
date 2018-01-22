@@ -1,77 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/dp"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="4dp">
 
 
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     android:padding="16dp">
 
-    tools:context="com.example.admin.registrationpage.MainActivity">
-   <TextView
-       android:layout_marginTop="30dp"
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+
+   <android.support.v7.widget.AppCompatTextView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:textSize="20dp"
-       android:id="@+id/Fname"
-       />
-    <TextView
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:id="@+id/Mname"
-        />
-    <TextView
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:id="@+id/Lname"
-        />
-    <TextView
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:id="@+id/Email"
-        />
-    <TextView
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:id="@+id/Password"
-        />
-    <TextView
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:id="@+id/Phono"
-        />
-    <TextView
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:id="@+id/Faxno"
-        />
-    <TextView
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:id="@+id/DoB"
-        />
-    <TextView
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:id="@+id/Address"
-        />
+       android:layout_weight="2"
+       android:text="@string/hint_fname"
+       android:textColor="#000" />
 
-    </LinearLayout>
+   <android.support.v7.widget.AppCompatTextView
+       android:id="@+id/textViewFName"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="@string/hint_fname"
+       android:textColor="@android:color/darker_gray" />
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:orientation="horizontal">
+
+   <android.support.v7.widget.AppCompatTextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="2"
+       android:text="@string/hint_mname"
+       android:textColor="#000" />
+
+   <android.support.v7.widget.AppCompatTextView
+       android:id="@+id/textViewMName"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="@string/hint_mname"
+       android:textColor="@android:color/darker_gray" />
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:orientation="horizontal">
+
+   <android.support.v7.widget.AppCompatTextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="2"
+       android:text="@string/hint_lname"
+       android:textColor="#000" />
+
+   <android.support.v7.widget.AppCompatTextView
+       android:id="@+id/textViewLName"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="@string/hint_lname"
+       android:textColor="@android:color/darker_gray" />
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:orientation="horizontal">
+
+   <android.support.v7.widget.AppCompatTextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="2"
+       android:text="@string/hint_email"
+       android:textColor="#000" />
+
+   <android.support.v7.widget.AppCompatTextView
+       android:id="@+id/textViewEmail"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="@string/hint_email"
+       android:textColor="@android:color/darker_gray" />
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:orientation="horizontal">
+
+   <android.support.v7.widget.AppCompatTextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="2"
+       android:text="@string/hint_password"
+       android:textColor="#000" />
+
+   <android.support.v7.widget.AppCompatTextView
+       android:id="@+id/textViewPassword"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="@string/hint_password"
+       android:textColor="@android:color/darker_gray" />
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:orientation="horizontal">
+
+   <android.support.v7.widget.AppCompatTextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="2"
+       android:text="@string/hint_phono"
+       android:textColor="#000" />
+
+   <android.support.v7.widget.AppCompatTextView
+       android:id="@+id/textViewPhono"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="@string/hint_phono"
+       android:textColor="@android:color/darker_gray" />
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:orientation="horizontal">
+
+   <android.support.v7.widget.AppCompatTextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="2"
+       android:text="@string/hint_faxno"
+       android:textColor="#000" />
+
+   <android.support.v7.widget.AppCompatTextView
+       android:id="@+id/textViewFaxno"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="@string/hint_faxno"
+       android:textColor="@android:color/darker_gray" />
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:orientation="horizontal">
+
+   <android.support.v7.widget.AppCompatTextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="2"
+       android:text="@string/hint_DoB"
+       android:textColor="#000" />
+
+   <android.support.v7.widget.AppCompatTextView
+       android:id="@+id/textViewDOB"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="@string/hint_DoB"
+       android:textColor="@android:color/darker_gray" />
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:orientation="horizontal">
+
+   <android.support.v7.widget.AppCompatTextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="2"
+       android:text="@string/hint_Address"
+       android:textColor="#000" />
+
+   <android.support.v7.widget.AppCompatTextView
+       android:id="@+id/textViewAddress"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="@string/hint_Address"
+       android:textColor="@android:color/darker_gray" />
+  </LinearLayout>
+
+
+ </LinearLayout>
+
+</android.support.v7.widget.CardView>

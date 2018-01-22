@@ -2,10 +2,16 @@
     <string name="app_name">"RegistrationPage "</string>
 
     <string name="text_accounts">All Accounts</string>
-    <string name="hint_name">Name</string>
+    <string name="hint_fname">FName</string>
+    <string name="hint_mname">MName</string>
+    <string name="hint_lname">LName</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="hint_confirm_password">Confirm Password</string>
+    <string name="hint_phono">Phono</string>
+    <string name="hint_faxno">Faxno</string>
+    <string name="hint_DoB">DOB</string>
+    <string name="hint_Address">Address</string>
     <string name="text_login">Login</string>
     <string name="text_register">Register</string>
     <string name="error_message_name">Enter Full Name</string>

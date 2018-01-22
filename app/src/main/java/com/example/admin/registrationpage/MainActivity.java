@@ -2,6 +2,7 @@ package com.example.admin.registrationpage;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,10 @@ Validation validation;
     private TextView dateView;
     private int year, month, day;
 
+    User user;
+
+    DataBase dataBase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +47,8 @@ Validation validation;
         Address=(EditText) findViewById(R.id.et10);
         validation=new Validation();
 
-
+  user=new User();
+        dataBase=new DataBase(this);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,6 +119,9 @@ Validation validation;
                 } else {
                     Address.setError(null);
                 }
+
+
+                postDataToSQLite();
 
 /*
 
@@ -213,5 +222,26 @@ Validation validation;
     private void showDate(int year, int month, int day) {
         dateView.setText(new StringBuilder().append(day).append("/")
                 .append(month).append("/").append(year));
+    }
+
+
+
+    private void postDataToSQLite() {
+
+
+
+
+            user.setFname(Firstname.getText().toString().trim());
+            user.setEmail(Middelname.getText().toString().trim());
+            user.setPassword(Lastname.getText().toString().trim());
+            dataBase.addUser(user);
+        Toast.makeText(getApplicationContext(),"Data is inserted in Table",Toast.LENGTH_LONG).show();
+
+
+
+
+
+
+
     }
 }
