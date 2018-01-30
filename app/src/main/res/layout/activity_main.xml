@@ -195,6 +195,7 @@
     android:orientation="horizontal"
             android:layout_marginTop="10dp">
     <TextView
+        android:id="@+id/tv1"
         android:layout_width="178dp"
         android:layout_height="wrap_content"
         android:text="Date of Birth           :"
@@ -208,7 +209,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
-
         android:onClick="setDate"
         android:drawableRight="@drawable/ic_action_cal"
         android:textAppearance="?android:attr/textAppearanceMedium" />

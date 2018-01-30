@@ -15,7 +15,8 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     Button b,r;
-    EditText Firstname,Middelname,Lastname,Email,Password,ConfirmPassword,Phno,Faxno,DOB,Address;
+    EditText Firstname,Middelname,Lastname,Email,Password,ConfirmPassword,Phno,Faxno,Address;
+    TextView DOB;
     Validation validation;
     private DatePicker datePicker;
     private Calendar calendar;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         ConfirmPassword=(EditText) findViewById(R.id.et6);
         Phno=(EditText) findViewById(R.id.et7);
         Faxno=(EditText) findViewById(R.id.et8);
+        DOB=(TextView) findViewById(R.id.tv1) ;
         Address=(EditText) findViewById(R.id.et10);
 
   user=new User();
