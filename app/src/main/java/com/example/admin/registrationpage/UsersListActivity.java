@@ -1,18 +1,23 @@
 package com.example.admin.registrationpage;
 
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
-class UsersListActivity extends AppCompatActivity {
+/**
+ * Created by User on 1/18/2018.
+ */
+
+public class UsersListActivity extends AppCompatActivity {
 
     private AppCompatActivity activity = UsersListActivity.this;
     private AppCompatTextView textViewName;

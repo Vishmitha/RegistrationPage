@@ -79,9 +79,15 @@ public class DataBase extends SQLiteOpenHelper{
         // array of columns to fetch
         String[] columns = {
                 COLUMN_USER_ID,
-                COLUMN_USER_EMAIL,
                 COLUMN_USER_FNAME,
-                COLUMN_USER_PASSWORD,COLUMN_USER_MNAME,COLUMN_USER_LNAME,COLUMN_USER_PHONO,COLUMN_USER_FAXNO,COLUMN_USER_DOB,COLUMN_USER_ADDRESS
+                COLUMN_USER_MNAME,
+                COLUMN_USER_LNAME,
+                COLUMN_USER_EMAIL,
+                COLUMN_USER_PASSWORD,
+                COLUMN_USER_PHONO,
+                COLUMN_USER_FAXNO,
+                COLUMN_USER_DOB,
+                COLUMN_USER_ADDRESS
         };
         String sortOrder =
                 COLUMN_USER_FNAME + " ASC";
@@ -156,7 +162,7 @@ public class DataBase extends SQLiteOpenHelper{
                 new String[]{String.valueOf(user.getId())});
         db.close();
     }
-    public boolean checkUser(String email) {
+   public boolean checkUser(String email) {
 
         // array of columns to fetch
         String[] columns = {
@@ -176,7 +182,7 @@ public class DataBase extends SQLiteOpenHelper{
          * SQL query equivalent to this query function is
          * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com';
          */
-        Cursor cursor = db.query(TABLE_USER, //Table to query
+       Cursor cursor = db.query(TABLE_USER, //Table to query
                 columns,                    //columns to return
                 selection,                  //columns for the WHERE clause
                 selectionArgs,              //The values for the WHERE clause
@@ -193,7 +199,7 @@ public class DataBase extends SQLiteOpenHelper{
 
         return false;
     }
-    public boolean checkUser(String email, String password) {
+   public boolean checkUser(String email, String password) {
 
         // array of columns to fetch
         String[] columns = {
@@ -212,6 +218,7 @@ public class DataBase extends SQLiteOpenHelper{
          * SQL query equivalent to this query function is
          * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com' AND user_password = 'qwerty';
          */
+
         Cursor cursor = db.query(TABLE_USER, //Table to query
                 columns,                    //columns to return
                 selection,                  //columns for the WHERE clause
@@ -230,4 +237,5 @@ public class DataBase extends SQLiteOpenHelper{
 
         return false;
     }
+
 }

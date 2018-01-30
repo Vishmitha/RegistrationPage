@@ -2,7 +2,7 @@ package com.example.admin.registrationpage;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.support.design.widget.Snackbar;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,15 +11,12 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     Button b,r;
     EditText Firstname,Middelname,Lastname,Email,Password,ConfirmPassword,Phno,Faxno,DOB,Address;
-Validation validation;
+    Validation validation;
     private DatePicker datePicker;
     private Calendar calendar;
     private TextView dateView;
@@ -45,16 +42,27 @@ Validation validation;
         Phno=(EditText) findViewById(R.id.et7);
         Faxno=(EditText) findViewById(R.id.et8);
         Address=(EditText) findViewById(R.id.et10);
-        validation=new Validation();
 
   user=new User();
         dataBase=new DataBase(this);
+
+
+        r.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),UsersListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                if(!validation.isValidName(Firstname.getText().toString()))
+                validation =new Validation();
+                if(validation.isValidName(Firstname.getText().toString()))
                 {
                     Firstname.setError("please enter a name it contain less than 11 charater");
                 } else {
@@ -234,8 +242,17 @@ Validation validation;
             user.setFname(Firstname.getText().toString().trim());
             user.setEmail(Middelname.getText().toString().trim());
             user.setPassword(Lastname.getText().toString().trim());
+        user.setPassword(Email.getText().toString().trim());
+        user.setPassword(Password.getText().toString().trim());
+        user.setPassword(Phno.getText().toString().trim());
+        user.setPassword(Faxno.getText().toString().trim());
+       user.setPassword(DOB.getText().toString().trim());
+        user.setPassword(Address.getText().toString().trim());
+
             dataBase.addUser(user);
         Toast.makeText(getApplicationContext(),"Data is inserted in Table",Toast.LENGTH_LONG).show();
+
+
 
 
 
