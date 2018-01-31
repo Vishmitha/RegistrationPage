@@ -16,6 +16,7 @@ import java.util.List;
  */
 
 
+
 public class HolderClass extends RecyclerView.Adapter<HolderClass.UserViewHolder> {
 
     private List<User> listUsers;
