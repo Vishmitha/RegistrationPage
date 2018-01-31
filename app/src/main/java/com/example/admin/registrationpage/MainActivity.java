@@ -11,11 +11,12 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    Button b,r;
-    EditText Firstname,Middelname,Lastname,Email,Password,ConfirmPassword,Phno,Faxno,Address;
+    Button b, r;
+    EditText Firstname, Middelname, Lastname, Email, Password, ConfirmPassword, Phno, Faxno, Address;
     TextView DOB;
     Validation validation;
     private DatePicker datePicker;
@@ -31,28 +32,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        b=(Button)findViewById(R.id.btn1);
-        r=(Button)findViewById(R.id.btn2);
-        Firstname =(EditText) findViewById(R.id.et1);
-        Middelname=(EditText) findViewById(R.id.et2);
-        Lastname=(EditText) findViewById(R.id.et3);
-        dateView=(TextView) findViewById(R.id.textView3);
-        Email=(EditText) findViewById(R.id.et4);
-        Password=(EditText) findViewById(R.id.et5);
-        ConfirmPassword=(EditText) findViewById(R.id.et6);
-        Phno=(EditText) findViewById(R.id.et7);
-        Faxno=(EditText) findViewById(R.id.et8);
-        DOB=(TextView) findViewById(R.id.tv1) ;
-        Address=(EditText) findViewById(R.id.et10);
+        b = (Button) findViewById(R.id.btn1);
+        r = (Button) findViewById(R.id.btn2);
+        Firstname = (EditText) findViewById(R.id.et1);
+        Middelname = (EditText) findViewById(R.id.et2);
+        Lastname = (EditText) findViewById(R.id.et3);
+        dateView = (TextView) findViewById(R.id.textView3);
+        Email = (EditText) findViewById(R.id.et4);
+        Password = (EditText) findViewById(R.id.et5);
+        ConfirmPassword = (EditText) findViewById(R.id.et6);
+        Phno = (EditText) findViewById(R.id.et7);
+        Faxno = (EditText) findViewById(R.id.et8);
+        DOB = (TextView) findViewById(R.id.tv1);
+        Address = (EditText) findViewById(R.id.et10);
 
-  user=new User();
-        dataBase=new DataBase(this);
-
+        user = new User();
+        dataBase = new DataBase(this);
+        validation = new Validation();
 
         r.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),UsersListActivity.class);
+                Intent intent = new Intent(getApplicationContext(), UsersListActivity.class);
                 startActivity(intent);
             }
         });
@@ -63,68 +64,57 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                validation =new Validation();
-                if(validation.isValidName(Firstname.getText().toString()))
-                {
+
+                if (validation.isValidName(Firstname.getText().toString())) {
                     Firstname.setError("please enter a name it contain less than 11 charater");
                 } else {
                     Firstname.setError(null);
                 }
 
-                if(!validation.isValidName(Middelname.getText().toString()))
-                {
+                if (!validation.isValidName(Middelname.getText().toString())) {
                     Middelname.setError("please enter Middle name");
                 } else {
                     Middelname.setError(null);
                 }
 
-                if(!validation.isValidName(Lastname.getText().toString()))
-                {
+                if (!validation.isValidName(Lastname.getText().toString())) {
                     Lastname.setError("please enter Last name");
                 } else {
                     Lastname.setError(null);
                 }
 
 
-
-                if(!validation.isValidEmail( Email.getText().toString()))
-                {
+                if (!validation.isValidEmail(Email.getText().toString())) {
                     Email.setError("please enter valid email it should be this formate abc@xyz.com");
                 } else {
-                  Email.setError(null);
+                    Email.setError(null);
                 }
 
-                if(!validation.isValidPassword(Password.getText().toString()))
-                {
+              /*  if (!validation.isValidPassword(Password.getText().toString())) {
                     Password.setError("A password must be eight characters including one uppercase letter, one special character and alphanumeric characters");
                 } else {
                     Password.setError(null);
-                }
-                if(!validation.isValidPassword( ConfirmPassword.getText().toString()))
-                {
+                }*/
+              /*  if (!validation.isValidPassword(ConfirmPassword.getText().toString())) {
                     ConfirmPassword.setError("plz enter correct password");
                 } else {
                     ConfirmPassword.setError(null);
-                }
+                }*/
 
-                if(!validation.isValidNumber( Phno.getText().toString()))
-                {
+                if (!validation.isValidNumber(Phno.getText().toString())) {
                     Phno.setError("It should consist of 10 digits ");
                 } else {
                     Phno.setError(null);
                 }
 
-                if(!validation.isValidFaxno( Faxno.getText().toString()))
-                {
+                if (!validation.isValidFaxno(Faxno.getText().toString())) {
                     Faxno.setError("It should consist of 14 digits ");
                 } else {
                     Faxno.setError(null);
                 }
 
 
-
-                if(!validation.isValidAddress(Address.getText().toString()))
-                {
+                if (!validation.isValidAddress(Address.getText().toString())) {
                     Address.setError("plz entere address");
                 } else {
                     Address.setError(null);
@@ -133,77 +123,27 @@ public class MainActivity extends AppCompatActivity {
 
                 postDataToSQLite();
 
-/*
-
-                if(Firstname.getText().toString().length()==0){
-                    Firstname.setError("First name not entered");
-
-                }
-                if(Middelname.getText().toString().length()==0){
-                    Middelname.setError("Middel name not entered");
-                    Middelname.requestFocus();
-                }
-
-                if(Lastname.getText().toString().length()==0){
-                    Lastname.setError("Lastname is Required");
-                    Lastname.requestFocus();
-                }
-                if(Email.getText().toString().length()==0){
-                    Email.setError(" Email not entered");
-                    Email.requestFocus();
-                }
-                if(Password.getText().toString().length()==0){
-                    Password.setError("Password not entered");
-                    Password.requestFocus();
-                }
-                if(ConfirmPassword.getText().toString().length()==0&&ConfirmPassword.getText().toString().length()==8){
-                    ConfirmPassword.setError("Please confirm password");
-                    ConfirmPassword.requestFocus();
-                }
-                if(Phno.getText().toString().length()==0){
-                    Phno.setError("Phone number not entered");
-                    Phno.requestFocus();
-                }
-
-                if(Faxno.getText().toString().length()==0){
-                    Faxno.setError("Faxnumber not entered");
-                    Faxno.requestFocus();
-                }
-                if(DOB.getText().toString().length()==0){
-                    DOB.setError("DOB not Entered");
-                    DOB.requestFocus();
-                }
-                if(Address.getText().toString().length()==0){
-                    Address.setError("Please Entered address");
-                    Address.requestFocus();
-                }
-
-*/
 
             }
 
 
-
-
-    });
-
+        });
 
 
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
-        showDate(year, month+1, day);
+        showDate(year, month + 1, day);
 
     }
-
 
 
     @SuppressWarnings("deprecation")
     public void setDate(View view) {
         showDialog(999);
         //Toast.makeText(getApplicationContext(), "",
-                //Toast.LENGTH_SHORT).show();
+        //Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -225,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                     // arg1 = year
                     // arg2 = month
                     // arg3 = day
-                    showDate(arg1, arg2+1, arg3);
+                    showDate(arg1, arg2 + 1, arg3);
                 }
             };
 
@@ -235,32 +175,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void postDataToSQLite() {
 
 
-
-
-            user.setFname(Firstname.getText().toString().trim());
-            user.setEmail(Middelname.getText().toString().trim());
-            user.setPassword(Lastname.getText().toString().trim());
-        user.setPassword(Email.getText().toString().trim());
+        user.setFname(Firstname.getText().toString().trim());
+        user.setMname(Middelname.getText().toString().trim());
+        user.setLname(Lastname.getText().toString().trim());
+        user.setEmail(Email.getText().toString().trim());
         user.setPassword(Password.getText().toString().trim());
-        user.setPassword(Phno.getText().toString().trim());
-        user.setPassword(Faxno.getText().toString().trim());
-       user.setPassword(DOB.getText().toString().trim());
-        user.setPassword(Address.getText().toString().trim());
+        user.setPhno(Phno.getText().toString().trim());
+        user.setFaxno(Faxno.getText().toString().trim());
+        user.setDOB(DOB.getText().toString().trim());
+        user.setAddress(Address.getText().toString().trim());
 
-            dataBase.addUser(user);
-        Toast.makeText(getApplicationContext(),"Data is inserted in Table",Toast.LENGTH_LONG).show();
-
-
-
-
-
-
-
+        dataBase.addUser(user);
+     //   Toast.makeText(getApplicationContext(), "Data is inserted in Table", Toast.LENGTH_LONG).show();
 
 
     }
+
+
 }

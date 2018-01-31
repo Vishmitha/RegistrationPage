@@ -13,8 +13,8 @@ public class User {
     private String lname;
     private String email;
     private String password;
-    private int phno;
-    private int faxno;
+    private String phno;
+    private String faxno;
     private String DOB;
     private String Address;
 
@@ -66,19 +66,19 @@ public class User {
         this.password = password;
     }
 
-    public int getPhno() {
+    public String getPhno() {
         return phno;
     }
 
-    public void setPhno(int phno) {
+    public void setPhno(String phno) {
         this.phno = phno;
     }
 
-    public int getFaxno() {
+    public String getFaxno() {
         return faxno;
     }
 
-    public void setFaxno(int faxno) {
+    public void setFaxno(String faxno) {
         this.faxno = faxno;
     }
 

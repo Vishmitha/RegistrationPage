@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,7 +21,6 @@ public class DataBase extends SQLiteOpenHelper{
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "UserManager.db";
     private static final String TABLE_USER = "user";
-
     private static final String COLUMN_USER_ID = "user_id";
     private static final String COLUMN_USER_FNAME = "user_fname";
     private static final String COLUMN_USER_MNAME = "user_mname";
@@ -33,7 +34,7 @@ public class DataBase extends SQLiteOpenHelper{
 
     private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
             + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_FNAME + " TEXT,"+ COLUMN_USER_MNAME + " TEXT,"+ COLUMN_USER_LNAME + " TEXT,"
-            + COLUMN_USER_EMAIL + " TEXT," + COLUMN_USER_PASSWORD + " TEXT"+ COLUMN_USER_PHONO + " TEXT,"+ COLUMN_USER_FAXNO + " TEXT," + COLUMN_USER_DOB + " TEXT," + COLUMN_USER_ADDRESS + " TEXT" + ")";
+            + COLUMN_USER_EMAIL + " TEXT," + COLUMN_USER_PASSWORD + " TEXT,"+ COLUMN_USER_PHONO + " TEXT,"+ COLUMN_USER_FAXNO + " TEXT," + COLUMN_USER_DOB + " TEXT," + COLUMN_USER_ADDRESS + " TEXT" + ")";
 
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
 
@@ -44,6 +45,7 @@ public class DataBase extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER_TABLE);
+        Log.i("Sailaja","Ur table is create");
     }
 
     @Override
@@ -58,7 +60,6 @@ public class DataBase extends SQLiteOpenHelper{
 
 
         SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
         values.put(COLUMN_USER_FNAME, user.getFname());
         values.put(COLUMN_USER_MNAME, user.getMname());
@@ -73,6 +74,7 @@ public class DataBase extends SQLiteOpenHelper{
 
 
         db.insert(TABLE_USER, null, values);
+        Log.i("Sailaja","inserted data");
         db.close();
     }
     public List<User> getAllUser() {
@@ -95,12 +97,7 @@ public class DataBase extends SQLiteOpenHelper{
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        // query the user table
-        /**
-         * Here query function is used to fetch records from user table this function works like we use sql query.
-         * SQL query equivalent to this query function is
-         * SELECT user_id,user_name,user_email,user_password FROM user ORDER BY user_name;
-         */
+
         Cursor cursor = db.query(TABLE_USER, //Table to query
                 columns,    //columns to return
                 null,        //columns for the WHERE clause
@@ -116,12 +113,12 @@ public class DataBase extends SQLiteOpenHelper{
                 User user = new User();
                 user.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID))));
                 user.setFname(cursor.getString(cursor.getColumnIndex(COLUMN_USER_FNAME)));
-                user.setMname(cursor.getString(cursor.getColumnIndex(COLUMN_USER_FNAME)));
-                user.setLname(cursor.getString(cursor.getColumnIndex(COLUMN_USER_FNAME)));
+                user.setMname(cursor.getString(cursor.getColumnIndex(COLUMN_USER_MNAME)));
+                user.setLname(cursor.getString(cursor.getColumnIndex(COLUMN_USER_LNAME)));
                 user.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
                 user.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
-                user.setPhno(cursor.getInt(cursor.getColumnIndex(COLUMN_USER_PHONO)));
-                user.setFaxno(cursor.getInt(cursor.getColumnIndex(COLUMN_USER_FAXNO)));
+                user.setPhno(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PHONO)));
+                user.setFaxno(cursor.getString(cursor.getColumnIndex(COLUMN_USER_FAXNO)));
                 user.setDOB(cursor.getString(cursor.getColumnIndex(COLUMN_USER_DOB)));
                 user.setAddress(cursor.getString(cursor.getColumnIndex(COLUMN_USER_ADDRESS)));
 

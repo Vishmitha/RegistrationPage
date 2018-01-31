@@ -1,5 +1,6 @@
 package com.example.admin.registrationpage;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ import java.util.List;
  * Created by User on 1/18/2018.
  */
 
-public class UsersListActivity extends AppCompatActivity {
+public class UsersListActivity extends AppCompatActivity implements View.OnClickListener {
 
     private AppCompatActivity activity = UsersListActivity.this;
     private AppCompatTextView textViewName;
@@ -84,5 +86,19 @@ public class UsersListActivity extends AppCompatActivity {
                 usersRecyclerAdapter.notifyDataSetChanged();
             }
         }.execute();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn1:
+                getDataFromSQLite();
+                break;
+            case R.id.btn2:
+                // Navigate to RegisterActivity
+                Intent intentRegister = new Intent(getApplicationContext(), UsersRecycler.class);
+                startActivity(intentRegister);
+                break;
+        }
     }
 }
