@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
+
 public class MainActivity extends AppCompatActivity {
     Button view, submit;
     EditText Firstname, Middelname, Lastname, Email, Password, ConfirmPassword, Phno, Faxno, Address;
