@@ -21,63 +21,46 @@ import java.util.List;
  */
 
 
-public class UsersListActivity extends AppCompatActivity implements View.OnClickListener {
+public class DisplaySCreen extends AppCompatActivity implements View.OnClickListener {
 
-    private AppCompatActivity activity = UsersListActivity.this;
+    private AppCompatActivity activity = DisplaySCreen.this;
     private AppCompatTextView textViewName;
     private RecyclerView recyclerViewUsers;
     private List<User> listUsers;
-    private UsersRecycler usersRecyclerAdapter;
-    private DataBase databaseHelper;
+    private HolderClass holderClassAdapter;
+    private SailajaDB databaseHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users_list);
-//        getSupportActionBar().setTitle("");
-        initViews();
-        initObjects();
-
-    }
-
-    /**
-     * This method is to initialize views
-     */
-    private void initViews() {
         textViewName = (AppCompatTextView) findViewById(R.id.textViewName);
         recyclerViewUsers = (RecyclerView) findViewById(R.id.recyclerViewUsers);
-    }
-
-    /**
-     * This method is to initialize objects to be used
-     */
-    private void initObjects() {
         listUsers = new ArrayList<>();
-        usersRecyclerAdapter = new UsersRecycler(listUsers);
+        holderClassAdapter = new HolderClass(listUsers);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerViewUsers.setLayoutManager(mLayoutManager);
         recyclerViewUsers.setItemAnimator(new DefaultItemAnimator());
         recyclerViewUsers.setHasFixedSize(true);
-        recyclerViewUsers.setAdapter(usersRecyclerAdapter);
-        databaseHelper = new DataBase(activity);
-
+        recyclerViewUsers.setAdapter(holderClassAdapter);
+        databaseHelper = new SailajaDB(activity);
         String emailFromIntent = getIntent().getStringExtra("EMAIL");
         textViewName.setText(emailFromIntent);
 
         getDataFromSQLite();
+
     }
 
-    /**
-     * This method is to fetch all user records from SQLite
-     */
+
+
     private void getDataFromSQLite() {
-        // AsyncTask is used that SQLite operation not blocks the UI Thread.
+
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... params) {
                 listUsers.clear();
-                listUsers.addAll(databaseHelper.getAllUser());
+                listUsers.addAll(databaseHelper.displaydatafromtable());
 
                 return null;
             }
@@ -85,7 +68,7 @@ public class UsersListActivity extends AppCompatActivity implements View.OnClick
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
-                usersRecyclerAdapter.notifyDataSetChanged();
+                holderClassAdapter.notifyDataSetChanged();
             }
         }.execute();
     }
@@ -97,8 +80,8 @@ public class UsersListActivity extends AppCompatActivity implements View.OnClick
                 getDataFromSQLite();
                 break;
             case R.id.btn2:
-                // Navigate to RegisterActivity
-                Intent intentRegister = new Intent(getApplicationContext(), UsersRecycler.class);
+
+                Intent intentRegister = new Intent(getApplicationContext(), HolderClass.class);
                 startActivity(intentRegister);
                 break;
         }

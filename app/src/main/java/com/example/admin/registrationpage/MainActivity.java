@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    Button b, r;
+    Button view, submit;
     EditText Firstname, Middelname, Lastname, Email, Password, ConfirmPassword, Phno, Faxno, Address;
     TextView DOB;
     Validation validation;
@@ -27,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
     User user;
 
-    DataBase dataBase;
+    SailajaDB dataBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        b = (Button) findViewById(R.id.btn1);
-        r = (Button) findViewById(R.id.btn2);
+        view = (Button) findViewById(R.id.btn1);
+        submit= (Button) findViewById(R.id.btn2);
         Firstname = (EditText) findViewById(R.id.et1);
         Middelname = (EditText) findViewById(R.id.et2);
         Lastname = (EditText) findViewById(R.id.et3);
@@ -48,20 +48,20 @@ public class MainActivity extends AppCompatActivity {
         Address = (EditText) findViewById(R.id.et10);
 
         user = new User();
-        dataBase = new DataBase(this);
+        dataBase = new SailajaDB(this);
         validation = new Validation();
 
-        r.setOnClickListener(new View.OnClickListener() {
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), UsersListActivity.class);
+                Intent intent = new Intent(getApplicationContext(), DisplaySCreen.class);
                 startActivity(intent);
             }
         });
 
 
 
-        b.setOnClickListener(new View.OnClickListener() {
+        submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -125,7 +125,8 @@ public class MainActivity extends AppCompatActivity {
 
                 postDataToSQLite();
 
-
+                Intent intent = new Intent(getApplicationContext(), Second.class);
+                startActivity(intent);
             }
 
 
@@ -191,8 +192,9 @@ public class MainActivity extends AppCompatActivity {
         user.setDOB(DOB.getText().toString().trim());
         user.setAddress(Address.getText().toString().trim());
 
-        dataBase.addUser(user);
-     //   Toast.makeText(getApplicationContext(), "Data is inserted in Table", Toast.LENGTH_LONG).show();
+        dataBase.addingindb(user);
+
+      Toast.makeText(getApplicationContext(), "Data is inserted in Table", Toast.LENGTH_LONG).show();
 
 
     }

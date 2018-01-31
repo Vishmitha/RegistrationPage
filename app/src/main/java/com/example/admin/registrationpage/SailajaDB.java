@@ -18,7 +18,7 @@ import java.util.List;
  */
 
 
-public class DataBase extends SQLiteOpenHelper{
+public class SailajaDB extends SQLiteOpenHelper{
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "UserManager.db";
     private static final String TABLE_USER = "user";
@@ -39,7 +39,7 @@ public class DataBase extends SQLiteOpenHelper{
 
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
 
-    public DataBase(Context context) {
+    public SailajaDB(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -56,10 +56,7 @@ public class DataBase extends SQLiteOpenHelper{
 
         onCreate(db);
     }
-    public void addUser(User user) {
-
-
-
+    public void addingindb(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_USER_FNAME, user.getFname());
@@ -78,7 +75,7 @@ public class DataBase extends SQLiteOpenHelper{
         Log.i("Sailaja","inserted data");
         db.close();
     }
-    public List<User> getAllUser() {
+    public List<User> displaydatafromtable() {
         // array of columns to fetch
         String[] columns = {
                 COLUMN_USER_ID,
@@ -86,7 +83,6 @@ public class DataBase extends SQLiteOpenHelper{
                 COLUMN_USER_MNAME,
                 COLUMN_USER_LNAME,
                 COLUMN_USER_EMAIL,
-                COLUMN_USER_PASSWORD,
                 COLUMN_USER_PHONO,
                 COLUMN_USER_FAXNO,
                 COLUMN_USER_DOB,
@@ -118,7 +114,6 @@ public class DataBase extends SQLiteOpenHelper{
                 user.setMname(cursor.getString(cursor.getColumnIndex(COLUMN_USER_MNAME)));
                 user.setLname(cursor.getString(cursor.getColumnIndex(COLUMN_USER_LNAME)));
                 user.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
-                user.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
                 user.setPhno(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PHONO)));
                 user.setFaxno(cursor.getString(cursor.getColumnIndex(COLUMN_USER_FAXNO)));
                 user.setDOB(cursor.getString(cursor.getColumnIndex(COLUMN_USER_DOB)));
@@ -134,107 +129,5 @@ public class DataBase extends SQLiteOpenHelper{
         return userList;
     }
 
-    public void updateUser(User user) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_USER_FNAME, user.getFname());
-        values.put(COLUMN_USER_MNAME, user.getMname());
-        values.put(COLUMN_USER_LNAME, user.getLname());
-        values.put(COLUMN_USER_EMAIL, user.getEmail());
-        values.put(COLUMN_USER_PASSWORD, user.getPassword());
-        values.put(COLUMN_USER_PHONO,user.getPhno());
-        values.put(COLUMN_USER_FAXNO,user.getFaxno());
-        values.put(COLUMN_USER_DOB, String.valueOf(user.getDOB()));
-        values.put(COLUMN_USER_ADDRESS,user.getAddress());
-
-
-        // updating row
-        db.update(TABLE_USER, values, COLUMN_USER_ID + " = ?",
-                new String[]{String.valueOf(user.getId())});
-        db.close();
-    }
-    public void deleteUser(User user) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        // delete user record by id
-        db.delete(TABLE_USER, COLUMN_USER_ID + " = ?",
-                new String[]{String.valueOf(user.getId())});
-        db.close();
-    }
-   public boolean checkUser(String email) {
-
-        // array of columns to fetch
-        String[] columns = {
-                COLUMN_USER_ID
-        };
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        // selection criteria
-        String selection = COLUMN_USER_EMAIL + " = ?";
-
-        // selection argument
-        String[] selectionArgs = {email};
-
-        // query user table with condition
-        /**
-         * Here query function is used to fetch records from user table this function works like we use sql query.
-         * SQL query equivalent to this query function is
-         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com';
-         */
-       Cursor cursor = db.query(TABLE_USER, //Table to query
-                columns,                    //columns to return
-                selection,                  //columns for the WHERE clause
-                selectionArgs,              //The values for the WHERE clause
-                null,                       //group the rows
-                null,                      //filter by row groups
-                null);                      //The sort order
-        int cursorCount = cursor.getCount();
-        cursor.close();
-        db.close();
-
-        if (cursorCount > 0) {
-            return true;
-        }
-
-        return false;
-    }
-   public boolean checkUser(String email, String password) {
-
-        // array of columns to fetch
-        String[] columns = {
-                COLUMN_USER_ID
-        };
-        SQLiteDatabase db = this.getReadableDatabase();
-        // selection criteria
-        String selection = COLUMN_USER_EMAIL + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
-
-        // selection arguments
-        String[] selectionArgs = {email, password};
-
-        // query user table with conditions
-        /**
-         * Here query function is used to fetch records from user table this function works like we use sql query.
-         * SQL query equivalent to this query function is
-         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com' AND user_password = 'qwerty';
-         */
-
-        Cursor cursor = db.query(TABLE_USER, //Table to query
-                columns,                    //columns to return
-                selection,                  //columns for the WHERE clause
-                selectionArgs,              //The values for the WHERE clause
-                null,                       //group the rows
-                null,                       //filter by row groups
-                null);                      //The sort order
-
-        int cursorCount = cursor.getCount();
-
-        cursor.close();
-        db.close();
-        if (cursorCount > 0) {
-            return true;
-        }
-
-        return false;
-    }
 
 }

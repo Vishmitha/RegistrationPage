@@ -16,18 +16,18 @@ import java.util.List;
  * Created by User on 1/18/2018.
  */
 
-public class UsersRecycler extends RecyclerView.Adapter<UsersRecycler.UserViewHolder> {
+public class HolderClass extends RecyclerView.Adapter<HolderClass.UserViewHolder> {
 
     private List<User> listUsers;
 
-    public UsersRecycler(List<User> listUsers) {
+    public HolderClass(List<User> listUsers) {
         this.listUsers = listUsers;
     }
 
     @Override
     public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // inflating recycler item view
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_recycler, parent, false);
+
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.rowitem, parent, false);
 
         return new UserViewHolder(itemView);
     }
@@ -47,7 +47,7 @@ public class UsersRecycler extends RecyclerView.Adapter<UsersRecycler.UserViewHo
 
     @Override
     public int getItemCount() {
-        Log.v(UsersRecycler.class.getSimpleName(),""+listUsers.size());
+        Log.v(HolderClass.class.getSimpleName(),""+listUsers.size());
         return listUsers.size();
     }
 

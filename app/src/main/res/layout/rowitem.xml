@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="10sp"
+    card_view:cardBackgroundColor="#66cf0de9"
     card_view:cardCornerRadius="4dp">
 
 
@@ -94,7 +97,7 @@
        android:layout_height="wrap_content"
        android:layout_weight="1"
        android:text="@string/hint_email"
-       android:textColor="@android:color/darker_gray" />
+       android:textColor="#040230" />
   </LinearLayout>
 
   <LinearLayout
@@ -115,7 +118,7 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_weight="1"
-       android:text="@string/hint_password"
+       android:text="***********"
        android:textColor="@android:color/darker_gray" />
   </LinearLayout>
   <LinearLayout
