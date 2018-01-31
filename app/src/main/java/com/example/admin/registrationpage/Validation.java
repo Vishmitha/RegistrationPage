@@ -17,6 +17,7 @@ public class Validation {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
     boolean isValidPassword(String pass) {
         Pattern pattern;
         Matcher matcher;

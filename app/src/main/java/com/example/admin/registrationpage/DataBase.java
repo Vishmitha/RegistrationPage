@@ -98,6 +98,7 @@ public class DataBase extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getReadableDatabase();
 
 
+
         Cursor cursor = db.query(TABLE_USER, //Table to query
                 columns,    //columns to return
                 null,        //columns for the WHERE clause

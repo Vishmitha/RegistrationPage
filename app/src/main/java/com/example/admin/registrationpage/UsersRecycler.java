@@ -30,6 +30,7 @@ public class UsersRecycler extends RecyclerView.Adapter<UsersRecycler.UserViewHo
 
         return new UserViewHolder(itemView);
     }
+
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
         holder.textViewFName.setText(listUsers.get(position).getFname());
