@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-
 /**
  * Created by User on 1/18/2018.
  */
