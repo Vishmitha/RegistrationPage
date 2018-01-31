@@ -1,5 +1,6 @@
 package com.example.admin.registrationpage;
 
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
