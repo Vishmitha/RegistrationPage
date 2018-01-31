@@ -178,6 +178,7 @@ public class MainActivity extends AppCompatActivity {
     private void postDataToSQLite() {
 
 
+
         user.setFname(Firstname.getText().toString().trim());
         user.setMname(Middelname.getText().toString().trim());
         user.setLname(Lastname.getText().toString().trim());
