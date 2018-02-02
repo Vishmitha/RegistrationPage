@@ -33,7 +33,7 @@
        android:layout_height="wrap_content"
        android:layout_weight="1"
        android:text="@string/hint_fname"
-       android:textColor="@android:color/darker_gray" />
+       android:textColor="#000" />
   </LinearLayout>
   <LinearLayout
       android:layout_width="match_parent"
@@ -54,7 +54,7 @@
        android:layout_height="wrap_content"
        android:layout_weight="1"
        android:text="@string/hint_mname"
-       android:textColor="@android:color/darker_gray" />
+       android:textColor="#000" />
   </LinearLayout>
   <LinearLayout
       android:layout_width="match_parent"
@@ -75,7 +75,7 @@
        android:layout_height="wrap_content"
        android:layout_weight="1"
        android:text="@string/hint_lname"
-       android:textColor="@android:color/darker_gray" />
+       android:textColor="#000" />
   </LinearLayout>
 
   <LinearLayout
@@ -119,7 +119,7 @@
        android:layout_height="wrap_content"
        android:layout_weight="1"
        android:text="***********"
-       android:textColor="@android:color/darker_gray" />
+       android:textColor="#000000" />
   </LinearLayout>
   <LinearLayout
       android:layout_width="match_parent"
@@ -140,7 +140,7 @@
        android:layout_height="wrap_content"
        android:layout_weight="1"
        android:text="@string/hint_phono"
-       android:textColor="@android:color/darker_gray" />
+       android:textColor="#000000" />
   </LinearLayout>
   <LinearLayout
       android:layout_width="match_parent"
@@ -161,7 +161,7 @@
        android:layout_height="wrap_content"
        android:layout_weight="1"
        android:text="@string/hint_faxno"
-       android:textColor="@android:color/darker_gray" />
+       android:textColor="#000000" />
   </LinearLayout>
   <LinearLayout
       android:layout_width="match_parent"
@@ -182,7 +182,7 @@
        android:layout_height="wrap_content"
        android:layout_weight="1"
        android:text="@string/hint_DoB"
-       android:textColor="@android:color/darker_gray" />
+       android:textColor="#000000" />
   </LinearLayout>
 
   <LinearLayout
@@ -204,7 +204,7 @@
        android:layout_height="wrap_content"
        android:layout_weight="1"
        android:text="@string/hint_Address"
-       android:textColor="@android:color/darker_gray" />
+       android:textColor="#000000" />
   </LinearLayout>
 
 
