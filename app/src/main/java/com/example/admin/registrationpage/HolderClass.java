@@ -32,6 +32,7 @@ public class HolderClass extends RecyclerView.Adapter<HolderClass.UserViewHolder
         return new UserViewHolder(itemView);
     }
 
+
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
         holder.textViewFName.setText(listUsers.get(position).getFname());
